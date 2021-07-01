@@ -27,8 +27,16 @@ Route::get('/admin/logout', function () {
 
 Route::group(['middleware'=>['admin_auth']],function(){
 
-    Route::view('/admin/post/list','admin/post/list');
-    Route::view('/admin/post/edit','admin/post/edit');
+    Route::get('/admin/post/list','App\Http\Controllers\admin\post@listing');
+
     Route::view('/admin/post/add','admin/post/add');
+
+    Route::post('/admin/post/submit','App\Http\Controllers\admin\post@submit');
+
+    Route::get('/admin/post/delete/{id}','App\Http\Controllers\admin\post@delete');
+
+    Route::get('/admin/post/edit/{id}','App\Http\Controllers\admin\post@edit');
+
+    Route::post('/admin/post/update/{id}','App\Http\Controllers\admin\post@update');
 
 });

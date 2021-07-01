@@ -26,7 +26,8 @@
 
 			    <br />
 
-                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" enctype="multipart/form-data">
+                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post" action="{{url('/admin/post/submit')}}" enctype="multipart/form-data">
+				@csrf
 
 
 
@@ -39,7 +40,10 @@
 
                     <div class="col-md-6 col-sm-6 ">
 
-						<input type="text" id="title" required="required" class="form-control " name="Title" >
+						<input type="text" id="title" class="form-control " name="title" >
+						@error('title')
+						<span class="field_error">{{$message}}</span>
+						@enderror
 
 					</div>
 					</div>
@@ -56,7 +60,10 @@
 
                     <div class="col-md-6 col-sm-6 ">
 
-						<textarea type="text" id="highlights" required="required" class="form-control " name="Short_description" ></textarea>
+						<textarea type="text" id="highlights"  class="form-control " name="highlight" ></textarea>
+						@error('highlight')
+						<span class="field_error">{{$message}}</span>
+						@enderror
 
 					</div>
 					</div>
@@ -73,7 +80,10 @@
 
                     <div class="col-md-6 col-sm-6 ">
 
-                        <textarea type="text" id="blog" required="required" class="form-control " name="long_description" ></textarea>
+                        <textarea type="text" id="blog"  class="form-control " name="blog" ></textarea>
+						@error('blog')
+						<span class="field_error">{{$message}}</span>
+						@enderror
 
                     </div>
                     </div>
@@ -92,7 +102,10 @@
 
                     <div class="col-md-6 col-sm-6">
 
-						<input type="file" name="Photo" class="form-control" id="customFile">
+						<input type="file" name="photo" class="form-control" id="customFile">
+						@error('photo')
+						<span class="field_error">{{$message}}</span>
+						@enderror
 
 					</div>
 					</div>

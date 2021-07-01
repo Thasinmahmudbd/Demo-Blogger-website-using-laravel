@@ -20,6 +20,15 @@ Route::get('/', function () {
 Route::view('/admin/login','admin/login');
 Route::post('/admin/login_submit','App\Http\Controllers\Admin_authority@login_submit');
 
-Route::view('/admin/post/list','admin/post/list');
-Route::view('/admin/post/edit','admin/post/edit');
-Route::view('/admin/post/add','admin/post/add');
+Route::get('/admin/logout', function () {
+    session()->forget('BLOG_USER_ID');
+    return redirect('/admin/login');
+});
+
+Route::group(['middleware'=>['admin_auth']],function(){
+
+    Route::view('/admin/post/list','admin/post/list');
+    Route::view('/admin/post/edit','admin/post/edit');
+    Route::view('/admin/post/add','admin/post/add');
+
+});

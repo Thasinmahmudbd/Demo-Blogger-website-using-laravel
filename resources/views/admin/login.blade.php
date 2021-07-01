@@ -31,7 +31,7 @@
 
           <section class="login_content">
 
-            <form action="login_submit" method="post">
+            <form action="{{url('/admin/login_submit')}}" method="post">
               @csrf
 
               <h1>Login Form</h1>
@@ -51,6 +51,12 @@
               <div>
 
                 <input type="submit" class="btn btn-success" name="submit" value="Log in">
+
+              </div>
+
+              <div>
+
+                {{session('msg')}}
 
               </div>
 

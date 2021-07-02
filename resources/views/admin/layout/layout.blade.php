@@ -62,18 +62,13 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Post <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="/admin/post/add">Add</a></li>
-                      <li><a href="/admin/post/list">Show</a></li>
+                      <li><a href="{{url('/admin/post/add')}}">Add</a></li>
+                      <li><a href="{{url('/admin/post/list')}}">Show</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-edit"></i> Messages <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">General Form</a></li>
-                      <li><a href="form_advanced.html">Advanced Components</a></li>
-                      <li><a href="form_validation.html">Form Validation</a></li>
-                      <li><a href="form_wizards.html">Form Wizard</a></li>
-                      <li><a href="form_upload.html">Form Upload</a></li>
-                      <li><a href="form_buttons.html">Form Buttons</a></li>
+                      <li><a href="{{url('/admin/contact/list')}}">Show</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
@@ -104,12 +99,14 @@
                       <li><a href="other_charts.html">Other Charts</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+
+                  <li><a><i class="fa fa-clone"></i>Page <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                      <li><a href="{{url('/admin/page/add')}}">Add</a></li>
+                      <li><a href="{{url('/admin/page/list')}}">Show</a></li>
                     </ul>
                   </li>
+
                 </ul>
               </div>
               <div class="menu_section">

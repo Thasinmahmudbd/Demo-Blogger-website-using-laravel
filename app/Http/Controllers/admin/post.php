@@ -80,8 +80,7 @@ class post extends Controller
 
             'title'=>$request->input('title'),
             'short_desc'=>$request->input('highlight'),
-            'long_desc'=>$request->input('blog'),
-            'status'=>1
+            'long_desc'=>$request->input('blog')
             
         );
 

@@ -13,20 +13,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+
+
+
+/* user routes */
+
+Route::get('/','App\Http\Controllers\user\post@home');
+
+Route::get('/post/{id}','App\Http\Controllers\user\post@post');
+
+Route::get('/page/{id}','App\Http\Controllers\user\post@page');
+
+Route::view('/contact','user/contact');
+
+Route::post('/contact/submit','App\Http\Controllers\user\post@submit');
+
+
+
+
+
+
 
 /* admin routes */
 
     /* login routes */
 
 Route::view('/admin/login','admin/login');
+Route::view('/page/admin/login','admin/login');
 Route::post('/admin/login_submit','App\Http\Controllers\Admin_authority@login_submit');
 
 Route::get('/admin/logout', function () {
     session()->forget('BLOG_USER_ID');
-    return redirect('/admin/login');
+    return redirect('/');
 });
 
 Route::group(['middleware'=>['admin_auth']],function(){
